@@ -20,9 +20,9 @@ app.get('/pessoas', new BuscarPessoasController().buscarPessoa)
 
 // lista por id
 app.get('/pessoas/:id', new BuscarPessoasIdController().buscarPessoaId)
-
+// atualiza
 app.put('/pessoas/:id', new AtualizarPessoas().atualizarPessoa)
-
+// deleta
 app.delete('/pessoas/:id', new DeletarPessoas().deletarPessoa)
 
 app.listen(port, () => {
