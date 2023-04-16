@@ -1,10 +1,9 @@
 const express = require('express');
-const { 
-    BuscarPessoasController, 
-    PostarPessoasController, 
-    BuscarPessoasIdController, 
-    AtualizarPessoas, 
-    DeletarPessoas } = require('./crud');
+const { PostarPessoasController } = require('./controladores_pessoas/postaPessoas')
+const { BuscarPessoasController } = require('./controladores_pessoas/buscaPessoas')
+const { BuscarPessoasIdController } = require('./controladores_pessoas/buscaPessoasId')
+const { AtualizarPessoasController } = require('./controladores_pessoas/atualizaPessoas')
+const { DeletarPessoasController } = require('./controladores_pessoas/deletaPessoas')
 
 
 const app = express();
@@ -21,9 +20,9 @@ app.get('/pessoas', new BuscarPessoasController().buscarPessoa)
 // lista por id
 app.get('/pessoas/:id', new BuscarPessoasIdController().buscarPessoaId)
 // atualiza
-app.put('/pessoas/:id', new AtualizarPessoas().atualizarPessoa)
+app.put('/pessoas/:id', new AtualizarPessoasController().atualizarPessoa)
 // deleta
-app.delete('/pessoas/:id', new DeletarPessoas().deletarPessoa)
+app.delete('/pessoas/:id', new DeletarPessoasController().deletarPessoa)
 
 app.listen(port, () => {
     console.log(`Servidor iniciado - porta ${port}`)
