@@ -1,13 +1,5 @@
-const mysql = require('mysql2')
+const conexao = require('./mySql')
 
-// Criando uma conexão com o banco de dados para buscar pessoas por id
-const conexao = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    port: '3000',
-    password: '12345',
-    database: 'lista_pessoas'
-});
 
 // Controlador para buscar uma pessoa por id
 class BuscarPessoasIdController {

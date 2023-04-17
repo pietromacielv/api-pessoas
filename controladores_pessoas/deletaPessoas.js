@@ -1,15 +1,7 @@
-const mysql = require('mysql2')
+const conexao = require('./mySql')
 
 // Criando uma conexão com o banco de dados
-const conexao = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    port: '3000',
-    password: '12345',
-    database: 'lista_pessoas'
-});
-
-
+// Controlador para deletar uma pessoa específica
 class DeletarPessoasController {
     deletarPessoa(req, res) {
         const id = req.params.id // recebe o id da pessoa a ser deletada através dos parâmetros da requisição
